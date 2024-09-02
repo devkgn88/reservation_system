@@ -1,8 +1,8 @@
-package com.gn.reservation.mapper;
+package com.gn.reservation.mybatis.mapper;
 
 import org.apache.ibatis.annotations.Mapper;
 
-import com.gn.reservation.vo.Account;
+import com.gn.reservation.mybatis.vo.Account;
 
 @Mapper
 public interface AccountMapper {

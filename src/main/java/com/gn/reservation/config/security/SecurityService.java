@@ -11,8 +11,8 @@ import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.stereotype.Service;
 
-import com.gn.reservation.mapper.AccountMapper;
-import com.gn.reservation.vo.Account;
+import com.gn.reservation.mybatis.mapper.AccountMapper;
+import com.gn.reservation.mybatis.vo.Account;
 
 @Service
 public class SecurityService implements UserDetailsService{

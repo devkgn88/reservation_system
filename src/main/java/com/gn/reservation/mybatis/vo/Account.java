@@ -1,4 +1,4 @@
-package com.gn.reservation.vo;
+package com.gn.reservation.mybatis.vo;
 
 import java.util.List;
 

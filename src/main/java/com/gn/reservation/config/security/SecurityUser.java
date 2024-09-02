@@ -2,7 +2,7 @@ package com.gn.reservation.config.security;
 
 import org.springframework.security.core.userdetails.User;
 
-import com.gn.reservation.vo.Account;
+import com.gn.reservation.mybatis.vo.Account;
 
 public class SecurityUser extends User{
 

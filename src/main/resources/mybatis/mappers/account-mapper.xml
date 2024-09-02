@@ -2,13 +2,16 @@
 <!DOCTYPE mapper PUBLIC
 "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.gn.reservation.mapper.AccountMapper">
+<mapper namespace="com.gn.reservation.mybatis.mapper.AccountMapper">
 	<select id="selectByAccountId" parameterType="String"
-	resultType="com.gn.reservation.vo.Account">
-		SELECT *
-		FROM account
+	resultType="com.gn.reservation.mybatis.vo.Account">
+		SELECT a.account_no, a.account_id, 
+				a.account_pw, a.account_name,
+				t.team_name, t.team_type
+		FROM `account` a
+		JOIN `team` t ON a.team_no = t.team_no
 		<where>
-			account_id = #{account_id}
+			a.account_id = #{account_id}
 		</where>
 	</select>
 	
