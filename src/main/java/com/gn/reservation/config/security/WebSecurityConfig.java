@@ -11,19 +11,21 @@ import org.springframework.security.web.SecurityFilterChain;
 @Configuration
 public class WebSecurityConfig {
 	
+	String[] staticResources = {
+			"/vendors/**"
+	};
+	
 	@Bean
     SecurityFilterChain defaultSecurityFilterChain(HttpSecurity http) throws Exception {
 		
-		http.authorizeHttpRequests( requests ->
-			requests
-					.requestMatchers("/login").permitAll()
-					.anyRequest().authenticated()
-			)
+		http.authorizeHttpRequests(requests ->
+			requests.requestMatchers(staticResources).permitAll()
+					.anyRequest().authenticated())
 		.formLogin(login ->
 			login.loginPage("/login")
 				.loginProcessingUrl("/login")
 				.usernameParameter("account_id")
-				.usernameParameter("account_pw")
+				.passwordParameter("account_pw")
 				.permitAll()
 				.successHandler(new LoginSuccessHandler())
 				.failureHandler(new LoginFailureHandler()))
@@ -31,12 +33,12 @@ public class WebSecurityConfig {
 		return http.build();
 	}
 	
-	@Bean
-	WebSecurityCustomizer webSecurityCustomizer() {
-		return (web -> web
-				.ignoring()
-				.requestMatchers("/vendors/**")
-				);
-	}
+//	@Bean
+//	WebSecurityCustomizer webSecurityCustomizer() {
+//		return (web -> web
+//				.ignoring()
+//				.requestMatchers("/vendors/**")
+//				);
+//	}
 
 }

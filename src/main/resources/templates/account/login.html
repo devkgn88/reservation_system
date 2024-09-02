@@ -39,6 +39,7 @@
 						<h2 class="text-center text-primary">회의실 예약 시스템</h2>
 					</div>
 					<form action="/login" method="post">
+						<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
 						<div class="select-role">
 							<div class="btn-group btn-group-toggle" data-toggle="buttons">
 								<label class="btn active">
@@ -83,7 +84,6 @@
 						<div class="row">
 							<div class="col-sm-12">
 								<div class="input-group mb-0">
-									<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}" />
 									<input class="btn btn-primary btn-lg btn-block" type="submit" value="로그인">
 									
 									<!-- <a class="btn btn-primary btn-lg btn-block" href="index.html">로그인</a> -->
