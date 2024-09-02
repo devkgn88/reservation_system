@@ -27,14 +27,20 @@ public class SecurityService implements UserDetailsService{
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {	
 		Account account = accountMapper.selectByAccountId(username);
-		String type = account.getTeam_type();
 		
-		List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
-		authorities.add(new SimpleGrantedAuthority("M".equals(type) ? "ADMIN" : "USER"));
+		if(account != null) {
+			String type = account.getTeam_type();
+			
+			List<GrantedAuthority> authorities = new ArrayList<GrantedAuthority>();
+			authorities.add(new SimpleGrantedAuthority("M".equals(type) ? "ADMIN" : "USER"));
+			
+			account.setAuthorities(authorities);
+			
+			return new SecurityUser(account);
+		} else {
+			throw new UsernameNotFoundException("오류!!");
+		}
 		
-		account.setAuthorities(authorities);
-				
-		return new SecurityUser(account);
 	}
 	
 
