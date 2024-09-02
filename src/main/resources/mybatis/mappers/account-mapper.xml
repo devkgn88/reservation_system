@@ -2,6 +2,14 @@
 <!DOCTYPE mapper PUBLIC
 "-//mybatis.org//DTD Mapper 3.0//EN"
 "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="accountMapper">
-
+<mapper namespace="com.gn.reservation.mapper.AccountMapper">
+	<select id="selectByAccountId" parameterType="String"
+	resultType="com.gn.reservation.vo.Account">
+		SELECT *
+		FROM account
+		<where>
+			account_id = #{account_id}
+		</where>
+	</select>
+	
 </mapper>
