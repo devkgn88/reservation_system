@@ -1,0 +1,23 @@
+@charset "UTF-8";
+.fc-day-today {
+    background: #fff !important;
+    border: none !important;
+  
+} 
+.fc th{
+	background: #f9fcf9 !important;
+}
+
+
+.fc .fc-button-primary{
+	background-color: #5cb874 !important; 
+	border-color: #5cb874 !important; 
+}
+
+.fc .fc-button-primary.fc-button-active{
+	background-color: #80c792 !important;
+  	border-color: #5cb874 !important;
+}
+
+.fc-day-sun { color:red; }
+.fc-day-sat { color:blue;  }
