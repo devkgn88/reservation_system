@@ -20,6 +20,7 @@ public class WebSecurityConfig {
 		http.authorizeHttpRequests(requests ->
 			requests.requestMatchers(staticResources).permitAll()
 					.requestMatchers("/error/**").permitAll()
+					.requestMatchers("/setting/**").hasAuthority("ADMIN")
 					.anyRequest().authenticated())
 		.formLogin(login ->
 			login.loginPage("/login")

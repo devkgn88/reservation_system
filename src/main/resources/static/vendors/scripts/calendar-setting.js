@@ -48,7 +48,7 @@ document.addEventListener('DOMContentLoaded', function() {
 	   {
 		 title:'국군의 날',
 	     start: '2024-10-01',
-	     end: '2024-10-01',
+	     end: '2024-10-02',
 	     overlap: false,
 	     display: 'background',
 		 backgroundColor:'#ff00007d',
