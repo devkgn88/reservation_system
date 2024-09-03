@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<th:block th:fragment="headerLayout">
+	<div class="pre-loader">
+		<div class="pre-loader-box">
+			<div class="loader-logo mx-auto max-width-200">
+				<img th:src="@{/vendors/images/goodee-logo.png}" alt="">
+			</div>
+			<div class='loader-progress' id="progress_div">
+				<div class='bar' id='bar1'></div>
+			</div>
+			<div class='percent' id='percent1'>0%</div>
+			<div class="loading-text">
+				로딩중...
+			</div>
+		</div>
+	</div>
+	<div class="header">
+		<div class="header-left">
+			<div class="menu-icon dw dw-menu"></div>
+			<div class="header-search">
+				<h4 class="text-left text-primary">회의실 예약 시스템</h4>
+			</div>			
+		</div>
+		<div class="header-right">
+			<div class="user-info-dropdown">
+				<div class="dropdown">
+					<a class="dropdown-toggle no-arrow" href="#" role="button" data-toggle="dropdown">
+						<span class="user-icon">
+							<img th:src="@{/images/profile.jpg}" alt="">
+						</span>
+						<span class="user-name">김가남 훈련생</span>
+					</a>
+				</div>
+			</div>
+		</div>
+	</div>
+</th:block>
+</html>

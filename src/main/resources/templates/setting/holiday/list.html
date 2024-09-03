@@ -1,104 +1,10 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
-<head>
-	<meta charset="UTF-8">
-	<!-- Site favicon -->
-	<link rel="apple-touch-icon" sizes="180x180" th:href="@{/vendors/images/apple-touch-icon.png}">
-	<link rel="icon" type="image/png" sizes="32x32" th:href="@{/vendors/images/favicon-32x32.png}">
-	<link rel="icon" type="image/png" sizes="16x16" th:href="@{/vendors/images/favicon-16x16.png}">
-	<!-- Mobile Specific Metas -->
-	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-	<!-- Google Font -->
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-	<!-- CSS -->
-	<link rel="stylesheet" type="text/css" th:href="@{/vendors/styles/core.css}">
-	<link rel="stylesheet" type="text/css" th:href="@{/vendors/styles/icon-font.min.css}">
-	<link rel="stylesheet" type="text/css" th:href="@{/vendors/styles/style.css}">
+<html xmlns:th="http://www.thymeleaf.org"
+     xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+     layout:decorate="~{include/layout}">
+<th:block layout:fragment="content">
 	<link rel="stylesheet" type="text/css" th:href="@{/plugins/datatables/css/dataTables.bootstrap4.min.css}">
 	<link rel="stylesheet" type="text/css" th:href="@{/plugins/datatables/css/responsive.bootstrap4.min.css}">
-	<title>회의실 예약 시스템</title>
-</head>
-<body>
-	<div class="pre-loader">
-		<div class="pre-loader-box">
-			<div class="loader-logo mx-auto max-width-200">
-				<img th:src="@{/vendors/images/goodee-logo.png}" alt="">
-			</div>
-			<div class='loader-progress' id="progress_div">
-				<div class='bar' id='bar1'></div>
-			</div>
-			<div class='percent' id='percent1'>0%</div>
-			<div class="loading-text">
-				로딩중...
-			</div>
-		</div>
-	</div>
-	
-		<div class="header">
-		<div class="header-left">
-			<div class="menu-icon dw dw-menu"></div>
-			<div class="header-search">
-				<h4 class="text-left text-primary">회의실 예약 시스템</h4>
-			</div>			
-		</div>
-		<div class="header-right">
-			<div class="user-info-dropdown">
-				<div class="dropdown">
-					<a class="dropdown-toggle no-arrow" href="#" role="button" data-toggle="dropdown">
-						<span class="user-icon">
-							<img th:src="@{/images/profile.jpg}" alt="">
-						</span>
-						<span class="user-name">김가남 훈련생</span>
-					</a>
-				</div>
-			</div>
-		</div>
-	</div>
-
-	<div class="left-side-bar">
-		<div class="brand-logo">
-			<a href="index.html">
-				<img th:src="@{/vendors/images/goodee-logo.png}" alt="" class="light-logo">
-			</a>
-			<div class="close-sidebar" data-toggle="left-sidebar-close">
-				<i class="ion-close-round"></i>
-			</div>
-		</div>
-		<div class="menu-block customscroll">
-			<div class="sidebar-menu">
-				<ul id="accordion-menu">
-					<li class="dropdown">
-						<a href="javascript:;" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-house-1"></span><span class="mtext">홈</span>
-						</a>
-					</li>
-					<li class="dropdown">
-						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon dw dw-edit"></span><span class="mtext">예약</span>
-						</a>
-						<ul class="submenu">
-							<li><a href="form-basic.html">현황</a></li>
-						</ul>
-					</li>
-					<li>
-						<a href="calendar.html" class="dropdown-toggle no-arrow">
-							<span class="micon dw dw-calendar-4"></span><span class="mtext">일정</span>
-						</a>
-					</li>
-					<li class="dropdown">
-						<a href="javascript:;" class="dropdown-toggle">
-							<span class="micon dw dw-settings"></span><span class="mtext">설정</span>
-						</a>
-						<ul class="submenu">
-							<li><a th:href="@{/setting/holiday}">휴일</a></li>
-						</ul>
-					</li>
-				</ul>
-			</div>
-		</div>
-	</div>
-	<div class="mobile-menu-overlay"></div>
-
 	<div class="main-container">
 		<div class="pd-ltr-20 xs-pd-20-10">
 			<div class="min-height-200px">
@@ -168,7 +74,7 @@
 								</tr>
 								<tr>
 									<td></td>
-									<td>성탄절<td>
+									<td>성탄절</td>
 									<td>2024-12-25</td>
 									<td>2024-12-25</td>
 									<td></td>
@@ -184,26 +90,5 @@
 			</div>
 		</div>
 	</div>
-	<!-- js -->
-	<script th:src="@{/vendors/scripts/core.js}"></script>
-	<script th:src="@{/vendors/scripts/script.min.js}"></script>
-	<script th:src="@{/vendors/scripts/process.js}"></script>
-	<script th:src="@{/vendors/scripts/layout-settings.js}"></script>
-	<script th:src="@{/plugins/datatables/js/jquery.dataTables.min.js}"></script>
-	<script th:src="@{/plugins/datatables/js/dataTables.bootstrap4.min.js}"></script>
-	<script th:src="@{/plugins/datatables/js/dataTables.responsive.min.js}"></script>
-	<script th:src="@{/plugins/datatables/js/responsive.bootstrap4.min.js}"></script>
-	
-	<!-- buttons for Export datatable -->
-	<script th:src="@{/plugins/datatables/js/dataTables.buttons.min.js}"></script>
-	<script th:src="@{/plugins/datatables/js/buttons.bootstrap4.min.js}"></script>
-	<script th:src="@{/plugins/datatables/js/buttons.print.min.js}"></script>
-	<script th:src="@{/plugins/datatables/js/buttons.html5.min.js}"></script>
-	<script th:src="@{/plugins/datatables/js/buttons.flash.min.js}"></script>
-	<script th:src="@{/plugins/datatables/js/pdfmake.min.js}"></script>
-	<script th:src="@{/plugins/datatables/js/vfs_fonts.js}"></script>
-	
-	<!-- Datatable Setting js -->
-	<script th:src="@{/vendors/scripts/datatable-setting.js}"></script>
-</body>
+</th:block>
 </html>
