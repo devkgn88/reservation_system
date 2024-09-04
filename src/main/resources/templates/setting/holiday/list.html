@@ -32,36 +32,36 @@
 						<div class="modal fade" id="holiday-add-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
 								<div class="modal-dialog modal-dialog-centered">
 									<div class="modal-content">
+										<form th:action="@{/setting/holiday}" method="post">
 										<div class="modal-header">
 											<h4 class="modal-title" id="myLargeModalLabel">휴일 추가</h4>
 											<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
 										</div>
 										<div class="modal-body">
-											<form>
-												<div class="form-group">
-													<label>명칭</label>
-													<input class="form-control" type="text" placeholder="휴일 명칭을 입력하세요.">
-												</div>
-												<div class="row">
-													<div class="col-md-6 col-sm-12">
-														<div class="form-group">
-															<label>시작일</label>
-															<input class="form-control date-picker" placeholder="날짜 선택" type="text">
-														</div>
-													</div>
-													<div class="col-md-6 col-sm-12">
-														<div class="form-group">
-															<label>종료일</label>
-															<input class="form-control date-picker" placeholder="날짜 선택" type="text">
-														</div>
+											<div class="form-group">
+												<label>명칭</label>
+												<input name="holiday_name" class="form-control" type="text" placeholder="휴일 명칭을 입력하세요.">
+											</div>
+											<div class="row">
+												<div class="col-md-6 col-sm-12">
+													<div class="form-group">
+														<label>시작일</label>
+														<input name="holiday_start" class="form-control date-picker" placeholder="날짜 선택" type="text">
 													</div>
 												</div>
-											</form>
+												<div class="col-md-6 col-sm-12">
+													<div class="form-group">
+														<label>종료일</label>
+														<input name="holiday_end" class="form-control date-picker" placeholder="날짜 선택" type="text">
+													</div>
+												</div>
+											</div>
 										</div>
 										<div class="modal-footer">
 											<button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
-											<button type="button" class="btn btn-primary">저장</button>
+											<button type="submit" class="btn btn-primary">저장</button>
 										</div>
+										</form>
 									</div>
 								</div>
 							</div>
