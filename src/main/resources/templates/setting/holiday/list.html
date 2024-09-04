@@ -44,41 +44,15 @@
 								</tr>
 							</thead>
 							<tbody>
-								<tr>
-									<td></td>
-									<td>추석</td>
-									<td>2024-09-15</td>
-									<td>2024-09-18</td>
-									<td></td>
-								</tr>
-								<tr>
-									<td></td>
-									<td>국군의 날</td>
-									<td>2024-10-01</td>
-									<td>2024-10-01</td>
-									<td></td>
-								</tr>
-								<tr>
-									<td></td>
-									<td>개천절</td>
-									<td>2024-10-03</td>
-									<td>2024-10-03</td>
-									<td></td>
-								</tr>
-								<tr>
-									<td></td>
-									<td>한글날</td>
-									<td>2024-10-09</td>
-									<td>2024-10-09</td>
-									<td></td>
-								</tr>
-								<tr>
-									<td></td>
-									<td>성탄절</td>
-									<td>2024-12-25</td>
-									<td>2024-12-25</td>
-									<td></td>
-								</tr>
+								<th:block th:if="${!#lists.isEmpty(resultList)}">
+									<tr th:each="holiday, holidayStat : ${resultList}">
+										<td></td>
+										<td th:text="${holiday.holiday_name}"></td>
+										<td th:text="${holiday.holiday_start}"></td>
+										<td th:text="${holiday.holiday_end}"></td>
+										<td></td>
+									</tr>
+								</th:block>
 							</tbody>
 						</table>
 					</div>
