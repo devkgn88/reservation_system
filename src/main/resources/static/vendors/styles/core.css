@@ -1722,7 +1722,7 @@ pre code {
 .form-control:focus {
   color: #495057;
   background-color: #fff;
-  border-color: #80bdff;
+  border-color: #6db580;
   outline: 0;
   -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); }
@@ -3100,7 +3100,7 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); }
 
 .custom-control-input:focus:not(:checked) ~ .custom-control-label::before {
-  border-color: #80bdff; }
+  border-color: #6db580; }
 
 .custom-control-input:not(:disabled):active ~ .custom-control-label::before {
   color: #fff;
@@ -3222,7 +3222,7 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
   appearance: none; }
 
 .custom-select:focus {
-  border-color: #80bdff;
+  border-color: #6db580;
   outline: 0;
   -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); }
@@ -3277,7 +3277,7 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
   opacity: 0; }
 
 .custom-file-input:focus ~ .custom-file-label {
-  border-color: #80bdff;
+  border-color: #6db580;
   -webkit-box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25);
   box-shadow: 0 0 0 0.2rem rgba(0, 123, 255, 0.25); }
 
@@ -9311,17 +9311,17 @@ ul.wysihtml5-toolbar .fa {
 
 .-selected-.datepicker--cell-day.-other-month-, .-selected-.datepicker--cell-year.-other-decade- {
   color: #fff;
-  background: #a2ddf6; }
+  background: #8aba97; }
 
 .-selected-.-focus-.datepicker--cell-day.-other-month-, .-selected-.-focus-.datepicker--cell-year.-other-decade- {
-  background: #8ad5f4; }
+  background: #5cb874; }
 
 .-in-range-.datepicker--cell-day.-other-month-, .-in-range-.datepicker--cell-year.-other-decade- {
-  background-color: rgba(92, 196, 239, 0.1);
+  background-color: rgba(92, 184, 113, 0.1);
   color: #cccccc; }
 
 .-in-range-.-focus-.datepicker--cell-day.-other-month-, .-in-range-.-focus-.datepicker--cell-year.-other-decade- {
-  background-color: rgba(92, 196, 239, 0.2); }
+  background-color: rgba(92, 184, 113, 0.2); }
 
 .datepicker--cell-day.-other-month-:empty, .datepicker--cell-year.-other-decade-:empty {
   background: none;
@@ -9359,21 +9359,21 @@ ul.wysihtml5-toolbar .fa {
   background: #f0f0f0; }
 
 .datepicker--cell.-current- {
-  color: #4EB5E6; }
+  color: #5cb874; }
 
 .datepicker--cell.-current-.-focus- {
   color: #4a4a4a; }
 
 .datepicker--cell.-current-.-in-range- {
-  color: #4EB5E6; }
+  color: #5cb874; }
 
 .datepicker--cell.-in-range- {
-  background: rgba(92, 196, 239, 0.1);
+  background: rgba(92, 184, 113, 0.1);
   color: #4a4a4a;
   border-radius: 0; }
 
 .datepicker--cell.-in-range-.-focus- {
-  background-color: rgba(92, 196, 239, 0.2); }
+  background-color: rgba(92, 184, 113, 0.2); }
 
 .datepicker--cell.-disabled- {
   cursor: default;
@@ -9389,13 +9389,13 @@ ul.wysihtml5-toolbar .fa {
   color: #aeaeae; }
 
 .datepicker--cell.-range-from- {
-  border: 1px solid rgba(92, 196, 239, 0.5);
-  background-color: rgba(92, 196, 239, 0.1);
+  border: 1px solid rgba(92, 184, 113, 0.5);
+  background-color: rgba(92, 184, 113, 0.1);
   border-radius: 4px 0 0 4px; }
 
 .datepicker--cell.-range-to- {
-  border: 1px solid rgba(92, 196, 239, 0.5);
-  background-color: rgba(92, 196, 239, 0.1);
+  border: 1px solid rgba(92, 184, 113, 0.5);
+  background-color: rgba(92, 184, 113, 0.1);
   border-radius: 0 4px 4px 0; }
 
 .datepicker--cell.-range-from-.-range-to- {
@@ -9404,14 +9404,14 @@ ul.wysihtml5-toolbar .fa {
 .datepicker--cell.-selected- {
   color: #fff;
   border: none;
-  background: #5cc4ef; }
+  background: #5cb874; }
 
 .datepicker--cell.-selected-.-current- {
   color: #fff;
-  background: #5cc4ef; }
+  background: #5cb874; }
 
 .datepicker--cell.-selected-.-focus- {
-  background: #45bced; }
+  background: #5cb874; }
 
 .datepicker--cell:empty {
   cursor: default; }
@@ -9473,17 +9473,17 @@ ul.wysihtml5-toolbar .fa {
 
 .-selected-.datepicker--cell-day.-other-month-, .-selected-.datepicker--cell-year.-other-decade- {
   color: #fff;
-  background: #a2ddf6; }
+  background: #8aba97; }
 
 .-selected-.-focus-.datepicker--cell-day.-other-month-, .-selected-.-focus-.datepicker--cell-year.-other-decade- {
-  background: #8ad5f4; }
+  background: #8aba97; }
 
 .-in-range-.datepicker--cell-day.-other-month-, .-in-range-.datepicker--cell-year.-other-decade- {
-  background-color: rgba(92, 196, 239, 0.1);
+  background-color: rgba(92, 184, 113, 0.1);
   color: #cccccc; }
 
 .-in-range-.-focus-.datepicker--cell-day.-other-month-, .-in-range-.-focus-.datepicker--cell-year.-other-decade- {
-  background-color: rgba(92, 196, 239, 0.2); }
+  background-color: rgba(92, 184, 113, 0.2); }
 
 .datepicker--cell-day.-other-month-:empty, .datepicker--cell-year.-other-decade-:empty {
   background: none;
@@ -9633,17 +9633,17 @@ ul.wysihtml5-toolbar .fa {
 
 .-selected-.datepicker--cell-day.-other-month-, .-selected-.datepicker--cell-year.-other-decade- {
   color: #fff;
-  background: #a2ddf6; }
+  background: #8aba97; }
 
 .-selected-.-focus-.datepicker--cell-day.-other-month-, .-selected-.-focus-.datepicker--cell-year.-other-decade- {
-  background: #8ad5f4; }
+  background: #5cb874; }
 
 .-in-range-.datepicker--cell-day.-other-month-, .-in-range-.datepicker--cell-year.-other-decade- {
-  background-color: rgba(92, 196, 239, 0.1);
+  background-color: rgba(92, 184, 113, 0.1);
   color: #cccccc; }
 
 .-in-range-.-focus-.datepicker--cell-day.-other-month-, .-in-range-.-focus-.datepicker--cell-year.-other-decade- {
-  background-color: rgba(92, 196, 239, 0.2); }
+  background-color: rgba(92, 184, 113, 0.2); }
 
 .datepicker--cell-day.-other-month-:empty, .datepicker--cell-year.-other-decade-:empty {
   background: none;
@@ -9726,7 +9726,7 @@ ul.wysihtml5-toolbar .fa {
   border-top: 1px solid #efefef; }
 
 .datepicker--button {
-  color: #4EB5E6;
+  color: #5cb874;
   cursor: pointer;
   border-radius: 4px;
   -ms-flex: 1;
@@ -9758,17 +9758,17 @@ ul.wysihtml5-toolbar .fa {
 
 .-selected-.datepicker--cell-day.-other-month-, .-selected-.datepicker--cell-year.-other-decade- {
   color: #fff;
-  background: #a2ddf6; }
+  background: #8aba97; }
 
 .-selected-.-focus-.datepicker--cell-day.-other-month-, .-selected-.-focus-.datepicker--cell-year.-other-decade- {
-  background: #8ad5f4; }
+  background: #5cb874; }
 
 .-in-range-.datepicker--cell-day.-other-month-, .-in-range-.datepicker--cell-year.-other-decade- {
-  background-color: rgba(92, 196, 239, 0.1);
+  background-color: rgba(92, 184, 113, 0.1);
   color: #cccccc; }
 
 .-in-range-.-focus-.datepicker--cell-day.-other-month-, .-in-range-.-focus-.datepicker--cell-year.-other-decade- {
-  background-color: rgba(92, 196, 239, 0.2); }
+  background-color: rgba(92, 184, 113, 0.2); }
 
 .datepicker--cell-day.-other-month-:empty, .datepicker--cell-year.-other-decade-:empty {
   background: none;
@@ -9906,16 +9906,16 @@ ul.wysihtml5-toolbar .fa {
   outline: none; }
 
 .datepicker--time-row input[type='range']:focus::-webkit-slider-thumb {
-  background: #5cc4ef;
-  border-color: #5cc4ef; }
+  background: #5cb874;
+  border-color: #5cb874; }
 
 .datepicker--time-row input[type='range']:focus::-moz-range-thumb {
-  background: #5cc4ef;
-  border-color: #5cc4ef; }
+  background: #5cb874;
+  border-color: #5cb874; }
 
 .datepicker--time-row input[type='range']:focus::-ms-thumb {
-  background: #5cc4ef;
-  border-color: #5cc4ef; }
+  background: #5cb874;
+  border-color: #5cb874; }
 
 .datepicker--time-row input[type='range']::-webkit-slider-thumb {
   -webkit-box-sizing: border-box;
@@ -10024,17 +10024,17 @@ ul.wysihtml5-toolbar .fa {
 
 .-selected-.datepicker--cell-day.-other-month-, .-selected-.datepicker--cell-year.-other-decade- {
   color: #fff;
-  background: #a2ddf6; }
+  background: #8aba97; }
 
 .-selected-.-focus-.datepicker--cell-day.-other-month-, .-selected-.-focus-.datepicker--cell-year.-other-decade- {
-  background: #8ad5f4; }
+  background: #5cb874; }
 
 .-in-range-.datepicker--cell-day.-other-month-, .-in-range-.datepicker--cell-year.-other-decade- {
-  background-color: rgba(92, 196, 239, 0.1);
+  background-color: rgba(92, 184, 113, 0.1);
   color: #cccccc; }
 
 .-in-range-.-focus-.datepicker--cell-day.-other-month-, .-in-range-.-focus-.datepicker--cell-year.-other-decade- {
-  background-color: rgba(92, 196, 239, 0.2); }
+  background-color: rgba(92, 184, 113, 0.2); }
 
 .datepicker--cell-day.-other-month-:empty, .datepicker--cell-year.-other-decade-:empty {
   background: none;
