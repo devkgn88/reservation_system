@@ -46,13 +46,13 @@
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 														<label>시작일</label>
-														<input name="holiday_start" class="form-control date-picker" placeholder="날짜 선택" type="text">
+														<input name="holiday_start" id="holiday_add_start" class="form-control" placeholder="날짜 선택" type="text">
 													</div>
 												</div>
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 														<label>종료일</label>
-														<input name="holiday_end" class="form-control date-picker" placeholder="날짜 선택" type="text">
+														<input name="holiday_end" id="holiday_add_end" class="form-control" placeholder="날짜 선택" type="text">
 													</div>
 												</div>
 											</div>
@@ -126,13 +126,13 @@
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 														<label>시작일</label>
-														<input name="holiday_start" id="holiday_edit_start" class="form-control date-picker" placeholder="날짜 선택" type="text">
+														<input name="holiday_start" id="holiday_edit_start" class="form-control date-picker start-date" placeholder="날짜 선택" type="text">
 													</div>
 												</div>
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 														<label>종료일</label>
-														<input name="holiday_end" id="holiday_edit_end" class="form-control date-picker" placeholder="날짜 선택" type="text">
+														<input name="holiday_end" id="holiday_edit_end" class="form-control date-picker end-date" placeholder="날짜 선택" type="text">
 													</div>
 												</div>
 											</div>
@@ -155,6 +155,7 @@
 		</div>
 	</div>
 	<script>
+
 		const holidayEditBtn = document.getElementsByClassName('holiday-edit-btn');
 		for(let i = 0 ; i < holidayEditBtn.length ; i++){
 			holidayEditBtn[i].onclick = function(){
