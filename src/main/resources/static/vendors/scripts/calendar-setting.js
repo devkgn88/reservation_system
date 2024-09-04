@@ -70,13 +70,13 @@ document.addEventListener('DOMContentLoaded', function() {
   		 backgroundColor:'#ff00007d',
   	   },
 	   {
- 		 title:'한글날',
+ 		 title:'한글날 어린이날',
  	     start: '2024-10-09',
  	     end: '2024-10-09',
  	     overlap: false,
  	     display: 'background',
  		 backgroundColor:'#ff00007d',
- 	   },
+ 	   }
 	  ]
 	  
 	});

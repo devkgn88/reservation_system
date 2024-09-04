@@ -84,7 +84,7 @@ $('document').ready(function(){
 			}
 		},
 		{
-			'targets': [4],
+			'targets': [5],
 			'searchable':false,
 			'orderable' :false,
 			'render':function(data,type,full,meta){
