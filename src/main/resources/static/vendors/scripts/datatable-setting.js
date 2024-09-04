@@ -88,10 +88,7 @@ $('document').ready(function(){
 			{
 				'targets': [5],
 				'searchable':false,
-				'orderable' :false,
-				'render':function(data,type,full,meta){
-					return '<input class="btn btn-primary" type="submit" value="수정">';
-				}
+				'orderable' :false
 			}
 	],
 		'order': [[1, 'asc']]

@@ -43,4 +43,10 @@ public class HolidayService {
 		return result;
 	}
 	
+	public HolidayDto selectHolidayOne(Long holiday_no) {
+		Holiday holiday = holidayRepository.findByholidayNo(holiday_no);
+		HolidayDto dto = new HolidayDto().toDto(holiday);
+		return dto;
+	}
+	
 }
