@@ -174,6 +174,67 @@ jQuery(document).ready(function(){
 		dateFormat: 'yyyy-mm-dd',
 	});
 	
+	const stringToDate = function(date){
+		let yyyy = date.substring(0,4);
+		let mm = date.substring(5,7);
+		let dd = date.substring(8,10);
+		mm = Number(mm)-1;
+		
+		return new Date(yyyy,mm,dd);
+	}
+	
+	$('#holiday_add_start').datepicker({
+		language:'en',
+		autoClose:true,
+		dateFormat : 'yyyy-mm-dd',
+		minDate:0,
+		onSelect:function(dateText){
+			$('#holiday_add_end').datepicker({
+				language:'en',
+				dateFormat:'yyyy-mm-dd',
+				minDate:new Date(stringToDate(dateText))
+			})
+		}
+	});
+	
+	$('#holiday_add_end').datepicker({
+		language:'en',
+		autoClose:true,
+		dateFormat : 'yyyy-mm-dd',
+		minDate:0,
+		onSelect:function(dateText){
+			$('#holiday_add_start').datepicker({
+				language:'en',
+				dateFormat:'yyyy-mm-dd',
+				maxDate:new Date(stringToDate(dateText))
+			})
+		}
+	});
+	
+
+	
+	$('#holiday_edit_start').datepicker({
+		datepicker:true,
+		language:'en',
+		autoClose:true,
+		dateFormat : 'yyyy-mm-dd',
+		minDate:0,
+	});
+
+/*	$('#holiday_edit_end').datepicker({
+		language:'en',
+		autoClose:true,
+		dateFormat : 'yyyy-mm-dd',
+		onSelect:function(dateText){
+			$('#holiday_edit_start').datepicker({
+				language:'en',
+				dateFormat:'yyyy-mm-dd',
+				maxDate:new Date(stringToDate(dateText))
+			})
+		}
+	});*/
+	
+
 	
 	$('.datetimepicker').datepicker({
 		timepicker: true,

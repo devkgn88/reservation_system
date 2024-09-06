@@ -46,13 +46,13 @@
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 														<label>시작일</label>
-														<input name="holiday_start" id="holiday_add_start" class="form-control" placeholder="날짜 선택" type="text">
+														<input name="holiday_start"  id="holiday_add_start" class="form-control" placeholder="날짜 선택" type="text">
 													</div>
 												</div>
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 														<label>종료일</label>
-														<input name="holiday_end" id="holiday_add_end" class="form-control" placeholder="날짜 선택" type="text">
+														<input name="holiday_end" readonly id="holiday_add_end" class="form-control" placeholder="날짜 선택" type="text">
 													</div>
 												</div>
 											</div>
@@ -126,13 +126,13 @@
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 														<label>시작일</label>
-														<input name="holiday_start" id="holiday_edit_start" class="form-control date-picker start-date" placeholder="날짜 선택" type="text">
+														<input name="holiday_start" readonly id="holiday_edit_start" class="form-control" placeholder="날짜 선택" type="text">
 													</div>
 												</div>
 												<div class="col-md-6 col-sm-12">
 													<div class="form-group">
 														<label>종료일</label>
-														<input name="holiday_end" id="holiday_edit_end" class="form-control date-picker end-date" placeholder="날짜 선택" type="text">
+														<input name="holiday_end" readonly id="holiday_edit_end" class="form-control" placeholder="날짜 선택" type="text">
 													</div>
 												</div>
 											</div>
@@ -154,8 +154,9 @@
 			</div>
 		</div>
 	</div>
+	<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
 	<script>
-
+	jQuery(document).ready(function(){
 		const holidayEditBtn = document.getElementsByClassName('holiday-edit-btn');
 		for(let i = 0 ; i < holidayEditBtn.length ; i++){
 			holidayEditBtn[i].onclick = function(){
@@ -185,10 +186,23 @@
 				document.getElementById("holiday_edit_name").value = data.holiday_name;
 				document.getElementById("holiday_edit_start").value = data.holiday_start;
 				document.getElementById("holiday_edit_end").value = data.holiday_end;
+				
+
+				 /*
+				  $('#holiday_edit_start').datepicker('show');  
+				 */
+				 //var inst = $.datepicker._getInst($("#holiday_edit_start")[0]);
+				 //$.datepicker._get(inst, 'onSelect').apply(inst.input[0], [$("#holiday_edit_start").datepicker('getDate'), inst]);
+				 //var x = new Date(2024, 9, 22, 0, 0, 0, 0);
+				 //console.log(x);
+				//$('#holiday_edit_start').datepicker('minDate', x);
+
+				
 			} else{
 				throw Error(data);
 			}
 		}
+	})
 	</script>
 </th:block>
 </html>
