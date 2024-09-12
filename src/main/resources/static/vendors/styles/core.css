@@ -4203,8 +4203,8 @@ input[type=button].btn-block, input[type=reset].btn-block, input[type=submit].bt
 
 .badge {
   display: inline-block;
-  padding: .25em .4em;
-  font-size: 75%;
+  padding: .12.5em .2em;
+  font-size: 98%;
   font-weight: 700;
   line-height: 1;
   text-align: center;

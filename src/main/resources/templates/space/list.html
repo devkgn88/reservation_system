@@ -3,6 +3,29 @@
      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
      layout:decorate="~{include/layout}">
 <th:block layout:fragment="content">
+   <style>
+        .space_info{
+            border-collapse: collapse;
+            text-align:center;
+            border:1px solid black;
+            width:100%;
+        }
+
+        .salmon_td, .blue_td, .green_td, .diagonal_lines_td, .door_td {
+            border: 1px solid black;
+            padding:1px 5px;
+        }
+        .salmon_td{background-color: rgba(233, 150, 122, 0.5);}
+        .blue_td{background-color: rgba(173, 216, 230, 0.5);}
+        .green_td{background-color:  honeydew;}
+        .diagonal_lines_td {
+            background: linear-gradient(45deg, rgba(112, 128, 144,0.5) 25%, rgba(173, 216, 230,0.5) 0, rgba(173, 216, 230,0.5) 50%,
+            rgba(112, 128, 144,0.5)  0, rgba(112, 128, 144,0.5)  75%, rgba(173, 216, 230,0.5) 0 );
+            background-size:9px 9px;
+        }
+        .red_border_badge{color:#cd3c14;border:2px solid #cd3c14;}
+        .blue_border_badge{color:#17a2b8;border:2px solid #17a2b8;}
+    </style>
 	<link rel="stylesheet" type="text/css" th:href="@{/plugins/datatables/css/dataTables.bootstrap4.min.css}">
 	<link rel="stylesheet" type="text/css" th:href="@{/plugins/datatables/css/responsive.bootstrap4.min.css}">
 	<div class="main-container">
@@ -10,9 +33,9 @@
 			<div class="min-height-200px">
 				<div class="page-header">
 					<div class="row">
-						<div class="col-md-6 col-sm-12">
+						<div class="col-md-12 col-sm-12">
 							<div class="title">
-								<h4>배정 구역 안내</h4>
+								<h4>배정 구역</h4>
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
@@ -20,134 +43,135 @@
 									<li class="breadcrumb-item active" aria-current="page">배정 구역</li>
 								</ol>
 							</nav>
-						</div>
-						<div class="col-md-6 col-sm-12 text-right">
-							<div class="dropdown">
-								<a class="btn btn-primary" href="#" data-toggle="modal"
-									data-target="#holiday-add-modal" type="button">
-									휴일 추가
-								</a>
-							</div>
-						</div>
-						<div class="modal fade" id="holiday-add-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-								<div class="modal-dialog modal-dialog-centered">
-									<div class="modal-content">
-										<form th:action="@{/setting/holiday}" method="post">
-										<div class="modal-header">
-											<h4 class="modal-title" id="myLargeModalLabel">휴일 추가</h4>
-											<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-										</div>
-										<div class="modal-body">
-											<div class="form-group">
-												<label>명칭</label>
-												<input name="holiday_name" class="form-control" type="text" placeholder="휴일 명칭을 입력하세요.">
-											</div>
-											<div class="row">
-												<div class="col-md-6 col-sm-12">
-													<div class="form-group">
-														<label>시작일</label>
-														<input name="holiday_start"  id="holiday_add_start" class="form-control" placeholder="날짜 선택" type="text">
-													</div>
-												</div>
-												<div class="col-md-6 col-sm-12">
-													<div class="form-group">
-														<label>종료일</label>
-														<input name="holiday_end" readonly id="holiday_add_end" class="form-control" placeholder="날짜 선택" type="text">
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="modal-footer">
-											<button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
-											<button type="submit" class="btn btn-primary">저장</button>
-										</div>
-										</form>
-									</div>
-								</div>
-							</div>
+						</div>				
 					</div>
 				</div>
-				<!-- Checkbox select Datatable start -->
-				<div class="card-box mb-30">
-					<div class="pd-20">
-						<h4 class="text-green h4">휴일 목록</h4>
+				<!-- Contextual classes Table start -->
+				<div class="pd-20 card-box mb-30">
+					<div class="clearfix mb-20">
+						<h4 class="text-green h4">배정 구역 안내</h4>
+						<div class="pull-left">
+							<ul class="list-group list-group-flush">
+								<li class="list-group-item">예약이 가능한 구역은 A와 B구역입니다.</li>
+								<li class="list-group-item">C구역은 모든 과정이 사용가능합니다.</li>
+								<li class="list-group-item">매 시간당 2개의 과정을 A 또는 B구역에 배정합니다.</li>
+								<li class="list-group-item">B구역중 사선이 있는 영역에는 PC가 없습니다.</li>
+								<li class="list-group-item">민원이 발생할 경우 조정될 수 있습니다.</li>
+							</ul>
+						</div>
+						<div class="pull-right">
+						    <table class="space_info">
+						        <colgroup>
+						            <col width="5%"/><col width="20%"/>
+						            <col width="5%"/><col width="20%"/>
+						            <col width="20%"/><col width="5%"/>
+						            <col width="20%"/><col width="5%"/>
+						        </colgroup>
+						        <tr>
+						            <td>&nbsp;</td><td></td><td></td><td></td>
+						            <td></td><td></td><td></td><td></td>
+						        </tr>
+						        <tr>
+						            <td></td><td class="green_td">C구역</td>
+						            <td></td><td class="blue_td">B구역</td>
+						            <td class="diagonal_lines_td">B구역</td><td></td>
+						            <td></td><td></td>
+						        </tr>
+						        <tr>
+						            <td></td><td class="green_td">C구역</td>
+						            <td></td><td></td><td></td><td></td>
+						            <td></td><td></td>
+						        </tr>
+						        <tr>
+						            <td></td><td class="green_td">C구역</td>
+						            <td></td><td class="salmon_td">A구역</td>
+						            <td class="salmon_td">A구역</td><td></td>
+						            <td></td><td></td>
+						        </tr>
+						        <tr>
+						            <td></td><td class="green_td">C구역</td>
+						            <td></td><td class="salmon_td">A구역</td>
+						            <td class="salmon_td">A구역</td><td></td>
+						            <td></td><td></td>
+						        </tr>
+						        <tr>
+						            <td></td><td class="green_td">C구역</td>
+						            <td></td><td></td><td></td>
+						            <td></td><td></td><td></td>
+						        </tr>
+						        <tr>
+						            <td></td><td></td>
+						            <td></td><td class="blue_td">B구역</td>
+						            <td class="diagonal_lines_td">B구역</td><td></td>
+						            <td class="door_td">출입문</td><td></td>
+						        </tr>
+						        <tr>
+						            <td>&nbsp;</td><td></td><td></td><td></td>
+						            <td></td><td></td><td></td><td></td>
+						        </tr>
+						    </table>
+						</div>
 					</div>
-					<div class="pb-20">
-						<table class="checkbox-datatable table nowrap">
+					<!-- <span class="badge" style="color:#cd3c14;border:2px solid #cd3c14;">84</span> -->
+					<div class="table-responsive">
+						<table class="table table-bordered text-center">
 							<thead>
 								<tr>
-									<th><div class="dt-checkbox">
-											<input type="checkbox" name="select_all" value="1" id="example-select-all">
-											<span class="dt-checkbox-label"></span>
-										</div>
-									</th>
-									<th>번호</th>
-									<th>명칭</th>
-									<th>시작일</th>
-									<th>종료일</th>
-									<th>수정</th>
+									<th scope="col">일시</th>
+									<th colspan="2" scope="col">9/2(월)</th>
+									<th colspan="2" scope="col">9/3(화)</th>
+									<th colspan="2" scope="col">9/4(수)</th>
+									<th colspan="2" scope="col">9/5(목)</th>
+									<th colspan="2" scope="col">9/6(금)</th>
+								</tr>
+								<tr>
+									<th scope="col">구역</th>
+									<th scope="col">A</th>
+									<th scope="col">B</th>
+									<th scope="col">A</th>
+									<th scope="col">B</th>
+									<th scope="col">A</th>
+									<th scope="col">B</th>
+									<th scope="col">A</th>
+									<th scope="col">B</th>
+									<th scope="col">A</th>
+									<th scope="col">B</th>																											
 								</tr>
 							</thead>
 							<tbody>
-								<th:block th:if="${!#lists.isEmpty(resultList)}">
-									<tr th:each="holiday, holidayStat : ${resultList}">
-										<td></td>
-										<td th:text="${holidayStat.count}"></td>
-										<td th:text="${holiday.holiday_name}"></td>
-										<td th:text="${holiday.holiday_start}"></td>
-										<td th:text="${holiday.holiday_end}"></td>
-										<td>
-											<input class="btn btn-primary holiday-edit-btn" type="button" value="수정"
-											th:attr="data-holiday_no=${holiday.holiday_no}">
-										</td>
-									</tr>
-								</th:block>
+								<tr>
+									<th scope="row">09:00~09:50</th>
+									<td><span class="badge red_border_badge">84</span></td>
+									<td><span class="badge blue_border_badge">82</span></td>
+									<td><span class="badge blue_border_badge">82</span></td>
+									<td><span class="badge red_border_badge">84</span></td>
+									<td><span class="badge blue_border_badge">82</span></td>
+									<td><span class="badge red_border_badge">84</span></td>
+									<td><span class="badge red_border_badge">84</span></td>
+									<td><span class="badge blue_border_badge">82</span></td>
+									<td><span class="badge blue_border_badge">82</span></td>																																																					
+									<td><span class="badge red_border_badge">84</span></td>
+								</tr>
+								<tr>
+									<th scope="row">10:00~10:50</th>
+									<td><span class="badge red_border_badge">84</span></td>
+									<td><span class="badge blue_border_badge">82</span></td>
+									<td><span class="badge blue_border_badge">82</span></td>
+									<td><span class="badge red_border_badge">84</span></td>
+									<td><span class="badge blue_border_badge">82</span></td>
+									<td><span class="badge red_border_badge">84</span></td>
+									<td><span class="badge red_border_badge">84</span></td>
+									<td><span class="badge blue_border_badge">82</span></td>
+									<td><span class="badge blue_border_badge">82</span></td>																																																					
+									<td><span class="badge red_border_badge">84</span></td>
+								</tr>
 							</tbody>
 						</table>
-						<a class="btn" href="#" data-toggle="modal" style="display:none;"
-								data-target="#holiday-edit-modal"
-								id="holiday-edit-modal-btn" type="button">
-								휴일 수정
-						</a>
-						<div class="modal fade" id="holiday-edit-modal" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true">
-								<div class="modal-dialog modal-dialog-centered">
-									<div class="modal-content">
-										<form method="post">
-										<div class="modal-header">
-											<h4 class="modal-title" id="myLargeModalLabel">휴일 수정</h4>
-											<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-										</div>
-										<div class="modal-body">
-											<div class="form-group">
-												<label>명칭</label>
-												<input name="holiday_name" id="holiday_edit_name" class="form-control" type="text" placeholder="휴일 명칭을 입력하세요.">
-											</div>
-											<div class="row">
-												<div class="col-md-6 col-sm-12">
-													<div class="form-group">
-														<label>시작일</label>
-														<input name="holiday_start" readonly id="holiday_edit_start" class="form-control" placeholder="날짜 선택" type="text">
-													</div>
-												</div>
-												<div class="col-md-6 col-sm-12">
-													<div class="form-group">
-														<label>종료일</label>
-														<input name="holiday_end" readonly id="holiday_edit_end" class="form-control" placeholder="날짜 선택" type="text">
-													</div>
-												</div>
-											</div>
-										</div>
-										<div class="modal-footer">
-											<button type="button" class="btn btn-secondary" data-dismiss="modal">닫기</button>
-											<button type="submit" class="btn btn-primary">저장</button>
-										</div>
-										</form>
-									</div>
-								</div>
-							</div>
 					</div>
+
 				</div>
-				<!-- Checkbox select Datatable End -->
+				
+				<!-- Contextual classes Table End -->
 			</div>
 			<div class="footer-wrap pd-20 mb-20 card-box">
 				Copyright 2024. <a href="https://github.com/devkgn88" target="_blank">김가남</a> all rights reserved.
