@@ -17976,16 +17976,21 @@ wysihtml5.views.Textarea = wysihtml5.views.View.extend(
         show: function () {	
 			// 커스터마이징
 			// datepicker 창 열었을 때 input value로 찾아오게 수정	
-			let date = this.el.value;
-			if(date){
-				let yyyy = date.substring(0,4);
-				let mm = date.substring(5,7);
-				let dd = date.substring(8,10);
-				mm = Number(mm)-1;
-				let nowDate = new Date(yyyy,mm,dd);
-				this.selectDate(nowDate);
-			}
-
+			// onShow event 쪽으로 옮겨볼게
+			
+			/*let nowDate = this.el.value;
+			console.log(nowDate);
+			if(nowDate){
+				let nowYear = nowDate.substring(0,4);
+				let nowMonth = nowDate.substring(5,7);
+				let nowDay = nowDate.substring(8,10);
+				nowMonth = Number(nowMonth)-1;
+				let calcDate = new Date(nowYear,nowMonth,nowDay);
+				console.log(calcDate);
+				//this.selectDate(calcDate);
+				
+			}*/
+			
             var onShow = this.opts.onShow;
 
             this.setPosition(this.opts.position);
@@ -18293,9 +18298,25 @@ wysihtml5.views.Textarea = wysihtml5.views.View.extend(
         },
 
         _onShowEvent: function (e) {
-            if (!this.visible) {
-                this.show();
-            }
+			
+			/*let nowDate = this.el.value;
+			console.log(nowDate);
+			if(nowDate){
+				let nowYear = nowDate.substring(0,4);
+				let nowMonth = nowDate.substring(5,7);
+				let nowDay = nowDate.substring(8,10);
+				nowMonth = Number(nowMonth)-1;
+				let calcDate = new Date(nowYear,nowMonth,nowDay);
+				console.log(calcDate);
+				//this.selectDate(calcDate);
+				
+			}*/
+			
+			if (!this.visible) {
+               this.show();
+           } 
+			
+           
         },
 
         _onBlur: function () {

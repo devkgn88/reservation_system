@@ -218,24 +218,29 @@ jQuery(document).ready(function(){
 		language:'en',
 		autoClose:true,
 		dateFormat : 'yyyy-mm-dd',
-		minDate:0,
+/*		onShow:function(){
+			console.log('navy');
+			const thisEl = this;
+			if(thisEl){
+				let nowDate = thisEl.el.value;
+				let nowYear = nowDate.substring(0,4);
+				let nowMonth = nowDate.substring(5,7);
+				let nowDay = nowDate.substring(8,10);
+				nowMonth = Number(nowMonth)-1;
+				let calcDate = new Date(nowYear,nowMonth,nowDay);
+				console.log(calcDate);
+				thisEl.selectDate(calcDate);
+			}
+		},*/
 	});
-
-/*	$('#holiday_edit_end').datepicker({
+	
+	$('#holiday_edit_end').datepicker({
 		language:'en',
 		autoClose:true,
 		dateFormat : 'yyyy-mm-dd',
-		onSelect:function(dateText){
-			$('#holiday_edit_start').datepicker({
-				language:'en',
-				dateFormat:'yyyy-mm-dd',
-				maxDate:new Date(stringToDate(dateText))
-			})
-		}
-	});*/
-	
 
-	
+	});
+		
 	$('.datetimepicker').datepicker({
 		timepicker: true,
 		language: 'en',

@@ -5,6 +5,7 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.security.config.Customizer;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.web.SecurityFilterChain;
+import org.springframework.security.web.access.AccessDeniedHandler;
 
 @Configuration
 public class WebSecurityConfig {
@@ -30,8 +31,15 @@ public class WebSecurityConfig {
 				.permitAll()
 				.successHandler(new LoginSuccessHandler())
 				.failureHandler(new LoginFailureHandler()))
+		.exceptionHandling(exception -> exception.accessDeniedHandler(accessDeniedHandler()))
 		.httpBasic(Customizer.withDefaults());
 		return http.build();
+	}
+	
+	private AccessDeniedHandler accessDeniedHandler() {
+		CustomAccessDeniedHandler accessDeniedHandler =  new CustomAccessDeniedHandler();
+		accessDeniedHandler.setErrorType("403");
+		return accessDeniedHandler;
 	}
 	
 //	@Bean

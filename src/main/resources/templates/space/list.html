@@ -12,12 +12,12 @@
 					<div class="row">
 						<div class="col-md-6 col-sm-12">
 							<div class="title">
-								<h4>휴일 설정</h4>
+								<h4>배정 구역 안내</h4>
 							</div>
 							<nav aria-label="breadcrumb" role="navigation">
 								<ol class="breadcrumb">
-									<li class="breadcrumb-item"><a href="index.html">설정</a></li>
-									<li class="breadcrumb-item active" aria-current="page">휴일</li>
+									<li class="breadcrumb-item"><a href="index.html">예약</a></li>
+									<li class="breadcrumb-item active" aria-current="page">배정 구역</li>
 								</ol>
 							</nav>
 						</div>
@@ -154,52 +154,5 @@
 			</div>
 		</div>
 	</div>
-	<script src="https://code.jquery.com/jquery-3.7.1.min.js" integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
-	<script>
-		const holidayEditBtn = document.getElementsByClassName('holiday-edit-btn');
-		for(let i = 0 ; i < holidayEditBtn.length ; i++){
-			holidayEditBtn[i].onclick = function(){
-	            const holidayNo = this.dataset.holiday_no;
-	            post('/setting/holiday/'+holidayNo)
-	            .then((data) =>{
-	            	const holidayEditModal = document.getElementById("holiday-edit-modal-btn");
-		            holidayEditModal.click();
-	            })
-	            .catch((error)=>{
-	            	console.log(error);
-	            })
-	        }
-	    }
-		
-		async function post(path){
-			const url = path;
-			const options = {
-				method:'get',
-				headers : {
-					'Content-Type':'application/json'
-				}
-			};
-			const res = await fetch(url,options);
-			const data = await res.json();
-			if(res.ok){
-				document.getElementById("holiday_edit_name").value = data.holiday_name;
-				document.getElementById("holiday_edit_start").value = data.holiday_start;
-				document.getElementById("holiday_edit_end").value = data.holiday_end;
-
-				 /*
-				  $('#holiday_edit_start').datepicker('show');  
-				 */
-				 //var inst = $.datepicker._getInst($("#holiday_edit_start")[0]);
-				 //$.datepicker._get(inst, 'onSelect').apply(inst.input[0], [$("#holiday_edit_start").datepicker('getDate'), inst]);
-				 //var x = new Date(2024, 9, 22, 0, 0, 0, 0);
-				 //console.log(x);
-				//$('#holiday_edit_start').datepicker('minDate', x);
-
-				
-			} else{
-				throw Error(data);
-			}
-		}
-	</script>
 </th:block>
 </html>

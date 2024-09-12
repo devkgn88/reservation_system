@@ -40,7 +40,7 @@
 					</div>
 					<form action="/login" method="post">
 						<input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
-						<div class="select-role">
+						<!-- <div class="select-role">
 							<div class="btn-group btn-group-toggle" data-toggle="buttons">
 								<label class="btn active">
 									<input type="radio" name="team_type" id="admin">
@@ -59,7 +59,7 @@
 									훈련생
 								</label>
 							</div>
-						</div>
+						</div> -->
 						<div class="input-group custom">
 							<input type="text" class="form-control form-control-lg" name="account_id" placeholder="아이디">
 							<div class="input-group-append custom">

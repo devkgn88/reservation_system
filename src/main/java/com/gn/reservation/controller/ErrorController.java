@@ -9,4 +9,9 @@ public class ErrorController {
 	public String error401Page() {
 		return "error/401";
 	}
+	
+	@GetMapping("/error/403")
+	public String error403Page() {
+		return "error/403";
+	}
 }

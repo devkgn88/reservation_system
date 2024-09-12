@@ -20,12 +20,12 @@
 	<div class="error-page d-flex align-items-center flex-wrap justify-content-center pd-20">
 		<div class="pd-10">
 			<div class="error-page-wrap text-center">
-				<h1>401</h1>
-				<h3>인증오류가 발생했습니다.</h3>
-				<p>인증되지 않은 사용자일 가능성이 높습니다.</p>
-				<p>로그인 정보를 다시 한 번 확인해주세요.</p>
+				<h1>403</h1>
+				<h3>접근이 거부되었습니다.</h3>
+				<p>요청하신 페이지 접근이 거부되었습니다.</p>
+				<p>입력하신 페이지의 주소가 정확한지 다시 한번 확인해주시기 바랍니다.</p>
 				<div class="pt-20 mx-auto max-width-200">
-					<a href="/login" class="btn btn-primary btn-block btn-lg">로그인</a>
+					<a th:href="|javascript:history.back();|" class="btn btn-primary btn-block btn-lg">뒤로가기</a>
 				</div>
 			</div>
 		</div>
